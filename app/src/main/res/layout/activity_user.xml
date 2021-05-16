@@ -5,13 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <ImageView
-        android:layout_margin="15pt"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:src="@drawable/avatar" />
-
     <LinearLayout
         android:layout_margin="15dp"
         android:layout_width="match_parent"
@@ -23,13 +16,14 @@
             android:layout_gravity="center_vertical"
             android:textSize="18sp"
             android:text="账号: " />
-        <EditText
-            android:id="@+id/accountEdit"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/usernameText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_margin="15dp"
         android:layout_width="match_parent"
@@ -40,21 +34,33 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:textSize="18sp"
-            android:text="密码: " />
-        <EditText
-            android:id="@+id/passwordEdit"
-            android:layout_width="0dp"
+            android:text="角色: 默认" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:inputType="textPassword"/>
+            android:textSize="18sp"
+            android:text="血量: " />
+        <TextView
+            android:id="@+id/bloodText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <Button
         android:layout_margin="15dp"
-        android:id="@+id/registeredBtn"
+        android:id="@+id/addBloodBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="注册" />
+        android:text="添加血量" />
 
 </LinearLayout>
