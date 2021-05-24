@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="15dp"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -13,170 +14,190 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:textSize="100dp"
-            android:text="0" />
+            android:textSize="100sp"
+            android:text="@string/zero" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="AC"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/ac"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="+/-"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/negative"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="%"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/percent"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="÷"/>
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/division"/>
 
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="7"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/seven"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="8"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/eight"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="9"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/nine"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="×"/>
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/multiply"/>
 
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="4"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/four"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="5"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/five"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="6"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/six"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="-"/>
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/minus"/>
 
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="1"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/one"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="2"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/two"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="3"/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/three"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="+"/>
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/plus"/>
 
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
-            android:layout_margin="5dp"
+
+        <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
             android:layout_height="100dp"
+            android:layout_margin="5dp"
             android:layout_weight="2"
-            android:textSize="30dp"
-            android:text="0"/>
-        <Button
+            android:text="@string/zero"
+            android:textSize="30sp"
+            app:cornerRadius="50dp" />
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="."/>
-        <Button
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/point"/>
+        <com.google.android.material.button.MaterialButton
             android:layout_margin="5dp"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="30dp"
-            android:text="="/>
+            app:cornerRadius="50dp"
+            android:textSize="30sp"
+            android:text="@string/equal"/>
 
     </LinearLayout>
 
