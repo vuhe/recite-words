@@ -23,4 +23,7 @@
     <string name="password">密码</string>
     <string name="xml_login">XML验证登录</string>
     <string name="json_login">JSON验证登录</string>
+    <string name="beijing">北京</string>
+    <string name="shanghai">上海</string>
+    <string name="guangzhou">广州</string>
 </resources>

@@ -3,7 +3,6 @@ package top.vuhe.android
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import top.vuhe.android.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -31,30 +30,12 @@ class MainActivity : AppCompatActivity() {
 
         // xml
         binding.xmlLoginBtn.setOnClickListener {
-            val input = resources.openRawResource(R.raw.std)
-            // 登录验证
-            val info = if (xmlCheckInfo(account, password, input)) "成功" else "失败"
-            prefs.edit().apply {
-                putString("account", account)
-                putString("password", password)
-                apply()
-            }
-            // 信息提示
-            Toast.makeText(this, "xml 验证: 登录$info", Toast.LENGTH_LONG).show()
+            WeatherActivity.actionStart(this, "xml")
         }
 
         // json
         binding.jsonLoginBtn.setOnClickListener {
-            val input = resources.openRawResource(R.raw.std2)
-            // 登录验证
-            val info = if (jsonCheckInfo(account, password, input)) "成功" else "失败"
-            prefs.edit().apply {
-                putString("account", account)
-                putString("password", password)
-                apply()
-            }
-            // 信息提示
-            Toast.makeText(this, "json 验证: 登录$info", Toast.LENGTH_LONG).show()
+            WeatherActivity.actionStart(this, "json")
         }
     }
 }
