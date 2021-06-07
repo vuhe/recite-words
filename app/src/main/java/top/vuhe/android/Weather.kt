@@ -7,7 +7,7 @@ import java.io.InputStream
 import java.io.Reader
 
 data class Weather(
-    val tmep: String,
+    val temp: String,
     val weather: String,
     val name: String,
     val pm: String,
@@ -15,14 +15,14 @@ data class Weather(
 )
 
 private class WeatherBuilder {
-    lateinit var tmep: String
+    lateinit var temp: String
     lateinit var weather: String
     lateinit var name: String
     lateinit var pm: String
     lateinit var wind: String
 
     fun build(): Weather {
-        return Weather(tmep, weather, name, pm, wind)
+        return Weather(temp, weather, name, pm, wind)
     }
 }
 
@@ -50,7 +50,7 @@ private fun parseXml(xmlData: Reader): Map<String, Weather> {
             // 开始一个节点
             XmlPullParser.START_TAG -> {
                 when (nodeName) {
-                    "temp" -> weather.tmep = xmlPullParser.nextText()
+                    "temp" -> weather.temp = xmlPullParser.nextText()
                     "weather" -> weather.weather = xmlPullParser.nextText()
                     "name" -> weather.name = xmlPullParser.nextText()
                     "pm" -> weather.pm = xmlPullParser.nextText()
@@ -76,7 +76,7 @@ private fun parseJson(jsonData: String): Map<String, Weather> {
     for (i in 0 until jsonArray.length()) {
         val jsonObject = jsonArray.getJSONObject(i)
         val weather = Weather(
-            tmep = jsonObject.getString("temp"),
+            temp = jsonObject.getString("temp"),
             weather = jsonObject.getString("weather"),
             name = jsonObject.getString("name"),
             pm = jsonObject.getString("pm"),

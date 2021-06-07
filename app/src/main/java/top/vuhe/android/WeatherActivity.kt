@@ -47,7 +47,7 @@ class WeatherActivity : AppCompatActivity() {
         map[name]?.let {
             binding.city.text = it.name
             binding.weather.text = it.weather
-            binding.temp.text = it.tmep
+            binding.temp.text = it.temp
             binding.pm.text = "pm: ${it.pm}"
             binding.wind.text = "风力: ${it.wind}"
         }
