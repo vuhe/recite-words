@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTest">
-        <activity android:name=".WeatherActivity"></activity>
-        <activity android:name=".CalculatorActivity" />
-        <activity android:name=".BloodActivity" />
-        <activity android:name=".UserActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.LogActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.WordsActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
