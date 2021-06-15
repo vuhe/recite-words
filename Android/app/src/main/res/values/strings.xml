@@ -12,6 +12,21 @@
     <string name="username">用户名</string>
     <string name="password">密码</string>
 
+    <!-- 单词页面数据 -->
+    <string name="word_list">单词列表</string>
+    <string name="word_add">添加单词</string>
+    <string name="word_setting">设置</string>
+
+    <!-- 设置页面数据 -->
+    <string name="upload">上传用户数据</string>
+    <string name="download">下载示例单词</string>
+    <string name="restore">恢复用户数据</string>
+    <string name="log">查看用户日志</string>
+    <string name="logout">退出登录</string>
+
+    <!-- 日志页面数据 -->
+    <string name="log_info">用户日志</string>
+
     <string name="insert">添加</string>
     <string name="update">修改</string>
     <string name="delete">删除</string>
