@@ -15,7 +15,10 @@
     <!-- 单词页面数据 -->
     <string name="word_list">单词列表</string>
     <string name="word_add">添加单词</string>
+    <string name="word_modify">修改单词</string>
     <string name="word_setting">设置</string>
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
 
     <!-- 设置页面数据 -->
     <string name="upload">上传用户数据</string>
