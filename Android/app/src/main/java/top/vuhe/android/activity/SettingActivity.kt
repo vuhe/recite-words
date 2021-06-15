@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import top.vuhe.android.databinding.ActivitySettingBinding
+import top.vuhe.android.model.UserViewModel
 
 /**
  * ## 设置页面
@@ -35,9 +36,11 @@ class SettingActivity : AppCompatActivity() {
             it.setDisplayHomeAsUpEnabled(true)
             it.setHomeButtonEnabled(true)
         }
-        // TODO 获取用户信息填入
-        userInfo = "当前用户: " + ""
+        userInfo = "当前用户: " + UserViewModel.user.name
+        binding.uploadBtn.setOnClickListener {
+        }
         binding.logBtn.setOnClickListener { LogActivity.actionStart(this) }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -5,7 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
+import kotlinx.coroutines.*
 import top.vuhe.android.databinding.ActivityRegisterBinding
+import top.vuhe.android.entity.User
+import top.vuhe.android.model.UserViewModel
+import top.vuhe.android.network.UserApi
 
 /**
  * ## 注册页面
@@ -37,7 +42,14 @@ class RegisterActivity : AppCompatActivity() {
             it.setHomeButtonEnabled(true)
         }
         binding.loginBtn.setOnClickListener {
-            WordsActivity.actionStart(this)
+            CoroutineScope(Dispatchers.Main).launch {
+                val result = UserApi.service.register(User(username, password))
+                if (result.code == 200) {
+                    registerOk()
+                } else {
+                    registerFiled()
+                }
+            }
         }
     }
 
@@ -46,5 +58,15 @@ class RegisterActivity : AppCompatActivity() {
             android.R.id.home -> finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun registerOk() {
+        Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show()
+        UserViewModel.updateUser(User(username, password))
+        WordsActivity.actionStart(this)
+    }
+
+    private fun registerFiled() {
+        Toast.makeText(this, "注册失败", Toast.LENGTH_SHORT).show()
     }
 }
