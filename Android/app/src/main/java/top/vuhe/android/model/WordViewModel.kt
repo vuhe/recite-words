@@ -4,46 +4,58 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class WordViewModel : ViewModel() {
+object WordViewModel : ViewModel() {
     val list: List<String>
         get() = data.value!!
     val data: LiveData<MutableList<String>>
-        get() = _data
-    private val _data = MutableLiveData<MutableList<String>>()
+        get() = words
+    private val words = MutableLiveData<MutableList<String>>()
     private val set = HashSet<String>()
 
     init {
-        _data.value = ArrayList()
+        words.value = ArrayList()
     }
 
     fun modify(oldWord: String?, newWord: String) {
-        _data.value?.let {
+        words.value?.let {
             val i = if (oldWord == null) -1 else it.indexOf(oldWord)
             if (i == -1) {
                 it.add(newWord)
+                set.add(newWord)
             } else {
                 it[i] = newWord
+                set.remove(oldWord)
+                set.add(newWord)
             }
-            _data.value = it
+            words.value = it
         }
     }
 
     fun addAll(list: Collection<String>) {
-        _data.value?.let { l ->
+        words.value?.let { l ->
             list.forEach {
                 if (set.contains(it).not()) {
                     set.add(it)
                     l.add(it)
                 }
             }
-            _data.value = l
+            words.value = l
         }
     }
 
     fun remove(word: String) {
-        _data.value?.let {
+        words.value?.let {
             it.remove(word)
-            _data.value = it
+            set.remove(word)
+            words.value = it
+        }
+    }
+
+    fun logout() {
+        words.value?.let {
+            it.clear()
+            set.clear()
+            words.value = it
         }
     }
 }

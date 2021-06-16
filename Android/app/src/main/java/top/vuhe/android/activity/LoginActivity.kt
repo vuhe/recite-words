@@ -55,6 +55,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+        ActivityCollector.addActivity(this)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -62,6 +63,11 @@ class LoginActivity : AppCompatActivity() {
             android.R.id.home -> finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityCollector.removeActivity(this)
     }
 
     private fun loginOk() {

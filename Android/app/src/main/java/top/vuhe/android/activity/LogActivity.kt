@@ -33,6 +33,7 @@ class LogActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(LogViewModel::class.java)
 
         initUi()
+        ActivityCollector.addActivity(this)
     }
 
     private fun initUi() {
@@ -54,5 +55,10 @@ class LogActivity : AppCompatActivity() {
             android.R.id.home -> finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityCollector.removeActivity(this)
     }
 }

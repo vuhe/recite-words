@@ -10,14 +10,11 @@ import android.view.MenuItem
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import top.vuhe.android.R
 import top.vuhe.android.databinding.ActivityWordsBinding
 import top.vuhe.android.model.WordAdapter
 import top.vuhe.android.model.WordViewModel
-
-private lateinit var viewModel: WordViewModel
 
 /**
  * ## 单词页面
@@ -37,23 +34,19 @@ class WordsActivity : AppCompatActivity() {
         binding = ActivityWordsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
-        viewModel = ViewModelProvider(this).get(WordViewModel::class.java)
 
         initUi()
+        ActivityCollector.addActivity(this)
     }
 
     private fun initUi() {
-        supportActionBar?.let {
-            it.setDisplayHomeAsUpEnabled(true)
-            it.setHomeButtonEnabled(true)
-        }
         binding.recycleView.layoutManager = LinearLayoutManager(this)
-        val adapter = WordAdapter(this, viewModel)
+        val adapter = WordAdapter(this, WordViewModel)
         binding.recycleView.adapter = adapter
         binding.addBtn.setOnClickListener {
             AddWordDialog(null).show(supportFragmentManager, "wordDialog")
         }
-        viewModel.data.observe(this) {
+        WordViewModel.data.observe(this) {
             adapter.notifyDataSetChanged()
         }
     }
@@ -65,10 +58,14 @@ class WordsActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            android.R.id.home -> finish()
             R.id.setting -> SettingActivity.actionStart(this)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityCollector.removeActivity(this)
     }
 }
 
@@ -84,7 +81,7 @@ class AddWordDialog(private val old: String?) : DialogFragment() {
             builder.setMessage(if (old == null) R.string.word_add else R.string.word_modify)
                 .setView(editText)
                 .setPositiveButton(R.string.ok) { _, _ ->
-                    viewModel.modify(old, editText.text.toString())
+                    WordViewModel.modify(old, editText.text.toString())
                 }
                 .setNegativeButton(R.string.cancel) { _, _ ->
                     dialog?.cancel()

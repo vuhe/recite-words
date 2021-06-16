@@ -21,4 +21,8 @@ object UserViewModel : ViewModel() {
         if (user == User.emptyUser || (user.name.isEmpty())) return
         currUser.value = user
     }
+
+    fun logout() {
+        currUser.value = User.emptyUser
+    }
 }
