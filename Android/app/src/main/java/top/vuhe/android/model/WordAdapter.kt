@@ -1,10 +1,12 @@
 package top.vuhe.android.model
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import top.vuhe.android.R
@@ -28,7 +30,14 @@ class WordAdapter(
             .inflate(R.layout.item_word, parent, false)
         val viewHolder = ViewHolder(view)
         viewHolder.shareBtn.setOnClickListener {
-            // TODO 执行分享
+            val word = viewHolder.wordMessage.text.toString()
+            val share = Intent()
+            share.action = Intent.ACTION_SEND
+            share.type = "text/plain"
+            share.putExtra(Intent.EXTRA_SUBJECT, "word_share")
+            share.putExtra(Intent.EXTRA_TEXT, word)
+            val intent = Intent.createChooser(share, "单词共享: $word")
+            startActivity(context, intent, null)
         }
         viewHolder.modifyBtn.setOnClickListener {
             AddWordDialog(viewHolder.wordMessage.text.toString())

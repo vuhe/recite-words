@@ -1,9 +1,0 @@
-<students>
-    <student>
-        <id>1</id>
-        <name>朱赫</name>
-        <age>21</age>
-        <sex>男</sex>
-        <password>123456</password>
-    </student>
-</students>
